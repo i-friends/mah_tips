@@ -1,0 +1,210 @@
+\chapter{Analisi}
+
+% ================================================================
+%                          COMPLESSI
+% ================================================================
+\section{Complessi}
+
+% prodotto
+\begin{equation}\label{sin}
+    (a+ib) \cdot (c+id) = (ac-bd) + i(ad+bc)
+\end{equation}
+
+% Re, Imm e modulo
+\begin{equation}\label{sin}
+\begin{aligned}
+    \Re z = \frac{z+\bar z}{2}, \qquad
+	\Im z = \frac{z-\bar z}{2i},\\
+	\abs{z} = \sqrt{z\cdot\bar z} = \sqrt{x^2+y^2}
+\end{aligned}
+\end{equation}
+
+% inverso di un complesso
+\begin{equation}
+\begin{aligned}
+    z\cdot \bar z = \abs{z}^2,\\
+	\frac{1}{z} = \frac{\bar z}{ \bar z \cdot z} = \frac{\bar z}{\abs{z}^2}
+\end{aligned}
+\end{equation}
+
+% proprietà del modulo
+\begin{theorem}[proprieta absz]
+Il modulo di un numero complesso soddisfa (come il valore assoluto)
+le seguenti proprietà
+\begin{enumerate}
+\item $\big\lvert\abs{z}\big\rvert = \abs{z}$,
+\item $\abs{-z} = \abs{z}$ = $\abs{\bar z}$,
+\item $\abs{z\cdot w} = \abs{z}\cdot\abs{w}$.
+\item $\abs{z+w} \le \abs{z}+\abs{w}$ (convessità),
+\item $\abs{z-w} \le \abs{z-v} + \abs{v-w}$ (disuguaglianza triangolare),
+\end{enumerate}
+\end{theorem}
+
+% ================================
+%      rappresentazione polare
+% ================================
+\subsection{Rappresentazione polare}
+
+% rappresentazione polare polare
+\begin{equation}
+    z = \rho u = \rho e^{i\theta}, \qquad \rho = \abs{z}, \quad \theta = \arg{z}
+\end{equation}
+
+% ================================================================
+%                         GONIOMETRIA
+% ================================================================
+\section{Goniometria}
+
+% ================================
+%           funzioni
+% ================================
+
+% forse è meglio senza sottosezioni
+\subsection{Funzioni}
+
+\begin{definition}[Funzioni goniometriche]
+    
+    % https://en.wikipedia.org/wiki/Trigonometric_functions
+    
+	% seno
+    \begin{equation}\label{sin}
+    \begin{aligned}
+        \sin(x) & = \cos(\frac{\pi}{2} - x) = \frac{1}{\csc(x)} = \frac{e ^ {ix} - e ^ {-ix}}{2}\\
+	            & = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots = \sum_{n=0}^\infty \frac{(-1)^n x^{2n+1}}{(2n+1)!}
+    \end{aligned}
+    \end{equation}
+    
+	% coseno
+    \begin{equation}\label{cos}
+	\begin{aligned}
+        \cos(x) & = \sin(\frac{\pi}{2} - x) = \frac{1}{\sec(x)} = \frac{e ^ {ix} + e ^ {-ix}}{2}\\
+		        & = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!}
+	\end{aligned}
+    \end{equation}
+    
+    \begin{equation}\label{tan}
+	\begin{aligned}
+        \tan(x) & = \cot(\frac{\pi}{2} - x) = \frac{e ^ {ix} - e ^ {-ix}}{e ^ {ix} + e ^ {-ix}}\\
+		        & = x + \frac{1}{3}x^3 + \frac{2}{15}x^5 + \frac{17}{315}x^7 + \cdots, \qquad \text{for } |x| < \frac{\pi}{2}
+	\end{aligned}
+    \end{equation}
+    
+    \begin{equation}\label{csc}
+	\begin{aligned}
+        \csc(x) & = \sec(\frac{\pi}{2} - x) = \frac{1}{sin(x)}\\
+		        & = x^{-1} + \frac{1}{6}x + \frac{7}{360}x^3 + \frac{31}{15120}x^5 + \cdots, \qquad \text{for } 0 < |x| < \pi
+	\end{aligned}
+    \end{equation}
+    
+    \begin{equation}\label{sec}
+	\begin{aligned}
+        \sec(x) & = \csc(\frac{\pi}{2} - x) = \frac{1}{cos(x)}\\
+		        & = 1 + \frac{1}{2}x^2 + \frac{5}{24}x^4 + \frac{61}{720}x^6 + \cdots, \qquad \text{for } |x| < \frac{\pi}{2}
+	\end{aligned}
+    \end{equation}
+    
+    \begin{equation}\label{cot}
+    \begin{aligned}
+        \cot(x) & = \tan(\frac{\pi}{2} - x) = \frac{1}{tan(x)} = \frac{cos(x)}{sin(x)}\\
+		        & = x^{-1} - \frac{1}{3}x - \frac{1}{45}x^3 - \frac{2}{945}x^5 - \cdots, \qquad \text{for } 0 < |x| < \pi
+	\end{aligned}
+    \end{equation}
+    
+    % copiata da wikipedia, (basta andare in modalità edit)
+    \[
+        \begin{array}{|c|ccccccccc|}
+        \hline
+        \begin{matrix}\text{Radian}\\ \text{Degree}\end{matrix} &
+        \begin{matrix}0\\ 0^\circ\end{matrix} &
+        \begin{matrix}\frac{\pi}{12}\\ 15^\circ\end{matrix} &
+        \begin{matrix}\frac{\pi}{8}\\ 22.5^\circ\end{matrix} &
+        \begin{matrix}\frac{\pi}{6}\\ 30^\circ\end{matrix} &
+        \begin{matrix}\frac{\pi}{4}\\ 45^\circ\end{matrix} &
+        \begin{matrix}\frac{\pi}{3}\\ 60^\circ\end{matrix} &
+        \begin{matrix}\frac{3\pi}{8}\\ 67.5^\circ\end{matrix} &
+        \begin{matrix}\frac{5\pi}{12}\\ 75^\circ\end{matrix} &
+        \begin{matrix}\frac{\pi}{2}\\ 90^\circ\end{matrix} \\
+        \hline
+        \sin &
+        0 &
+        \frac{ \sqrt{6} - \sqrt{2} } {4} &
+        \frac{ \sqrt{2 - \sqrt{2}} } {2} &
+        \frac{1}{2} &
+        \frac{\sqrt{2}}{2} &
+        \frac{\sqrt{3}}{2} &
+        \frac{ \sqrt{2 + \sqrt{2}} } {2} &
+        \frac{ \sqrt{6} + \sqrt{2} } {4} &
+        1 \\
+        \cos &
+        1 &
+        \frac{\sqrt{6}+\sqrt{2}}{4} &
+        \frac{ \sqrt{2 + \sqrt{2}} } {2} &
+        \frac{\sqrt{3}}{2} &
+        \frac{\sqrt{2}}{2} &
+        \frac{1}{2} &
+        \frac{ \sqrt{2 - \sqrt{2}} } {2} &
+        \frac{ \sqrt{6} - \sqrt{2}} {4} &
+        0 \\
+        \tan &
+        0 &
+        2-\sqrt{3} &
+        \sqrt{2} - 1 &
+        \frac{\sqrt{3}}{3} &
+        1 &
+        \sqrt{3} &
+        \sqrt{2} + 1 &
+        2+\sqrt{3} &
+        \infty \\
+        \cot &
+        \infty &
+        2+\sqrt{3} &
+        \sqrt{2} + 1 &
+        \sqrt{3} &
+        1 &
+        \frac{\sqrt{3}}{3} &
+        \sqrt{2} - 1 &
+        2-\sqrt{3} &
+        0 \\
+        \sec &
+        1 &
+        \sqrt{6} - \sqrt{2} &
+        \sqrt{2} \sqrt{ 2 - \sqrt{2} } &
+        \frac{2\sqrt{3}}{3} &
+        \sqrt{2} &
+        2 &
+        \sqrt{2} \sqrt{ 2 + \sqrt{2} } &
+        \sqrt{6}+\sqrt{2} &
+        \infty \\
+        \csc &
+        \infty &
+        \sqrt{6}+\sqrt{2} &
+        \sqrt{2} \sqrt{ 2 + \sqrt{2} } &
+        2 &
+        \sqrt{2} &
+        \frac{2\sqrt{3}}{3} &
+        \sqrt{2} \sqrt{ 2 - \sqrt{2} } &
+        \sqrt{6} - \sqrt{2} &
+        1 \\\hline
+        \end{array}
+    \]
+
+\end{definition}
+
+% ================================================================
+%                            Taylor
+% ================================================================
+\section{Taylor}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

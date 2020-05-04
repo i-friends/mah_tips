@@ -1,0 +1,159 @@
+% ================================================================
+%                          DOCUMENTO
+% ================================================================
+
+\documentclass{scrbook}
+
+% ================================================================
+%                          PACCHETTI
+% ================================================================
+
+% dare una spiegazione
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+% ??
+\usepackage{amsmath,amssymb,amsthm,thmtools}
+
+% glossario
+\usepackage{makeidx}
+
+% ??
+\usepackage{mathtools} % per \MoveEqLeft
+
+% QR-code
+\usepackage{qrcode}
+
+\usepackage{array} % per formattare le colonne di un tabular
+
+% ================================================================
+%                           ALIAS ?
+% ================================================================
+
+% sono presi da paolini
+% https://github.com/paolini/AnalisiUno/blob/master/AnalisiUno.tex
+
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\newcommand{\loc}{\mathit{loc}}
+\newcommand{\weakto}{\rightharpoonup}
+\newcommand{\implied}{\Longleftarrow}
+\let\subsetstrict\subset
+\renewcommand{\subset}{\subseteq}
+\renewcommand{\supset}{\supseteq}
+
+% calligraphic letters
+\newcommand{\A}{\mathcal A}
+\newcommand{\B}{\mathcal B}
+\newcommand{\C}{\mathcal C}
+\newcommand{\D}{\mathcal D}
+\newcommand{\E}{\mathcal E}
+\newcommand{\F}{\mathcal F}
+\newcommand{\FL}{\mathcal F\!\mathcal L}
+\renewcommand{\H}{\mathcal H}
+\newcommand{\K}{\mathcal K}
+\renewcommand{\L}{\mathcal L}
+\newcommand{\M}{\mathcal M}
+\renewcommand{\P}{\mathcal P}
+\renewcommand{\S}{\mathcal S}
+\newcommand{\U}{\mathcal U} %% intorni
+
+% blackboard letters
+\newcommand{\CC}{\mathbb C}
+\newcommand{\HH}{\mathbb H}
+\newcommand{\KK}{\mathbb K}
+\newcommand{\NN}{\mathbb N}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\TT}{\mathbb T}
+\newcommand{\ZZ}{\mathbb Z}
+
+\newcommand{\abs}[1]{{\left|#1\right|}}
+\newcommand{\Abs}[1]{{\left\Vert #1\right\Vert}}
+\newcommand{\enclose}[1]{{\left( #1 \right)}}
+\newcommand{\Enclose}[1]{{\left[ #1 \right]}}
+\newcommand{\ENCLOSE}[1]{{\left\{ #1 \right\}}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+
+\newcommand{\To}{\rightrightarrows}
+\renewcommand{\vec}[1]{\boldsymbol #1}
+\newcommand{\defeq}{:=}
+\DeclareMathOperator{\divergence}{div}
+\renewcommand{\div}{\divergence}
+% \DeclareMathOperator{\ker}{ker}  %% already defined
+\DeclareMathOperator{\Imaginarypart}{Im}
+\renewcommand{\Im}{\Imaginarypart}
+\DeclareMathOperator{\Realpart}{Re}
+\renewcommand{\Re}{\Realpart}
+%\DeclareMathOperator{\arg}{arg}
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\arctg}{arctg}
+\DeclareMathOperator{\tgh}{tgh}
+\DeclareMathOperator{\settsinh}{settsinh}
+\DeclareMathOperator{\settcosh}{settcosh}
+\DeclareMathOperator{\setttgh}{setttgh}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\diag}{diag}
+
+\declaretheoremstyle[
+spaceabove=6pt, spacebelow=6pt,
+postheadspace=1em,
+qed=,
+%shaded={rulecolor=blue!20,rulewidth=1pt,bgcolor=blue!5}
+]{theorem_style}
+
+\declaretheoremstyle[
+spaceabove=6pt, spacebelow=6pt,
+postheadspace=1em,
+qed=,
+%shaded={rulecolor=yellow!50,rulewidth=1pt,bgcolor=yellow!5}
+]{axiom_style}
+
+\numberwithin{equation}{chapter}
+\declaretheorem[name=Teorema,numberwithin=chapter]{theorem}
+\declaretheorem[name=Lemma,sibling=theorem]{lemma}
+\declaretheorem[name=Proposizione,sibling=theorem]{proposition}
+\declaretheorem[name=Corollario,sibling=theorem]{corollary}
+\declaretheorem[name=Paradosso,sibling=theorem]{paradox}
+\declaretheorem[style=axiom_style,name=Assioma,sibling=theorem]{axiom}
+\declaretheorem[name=Definizione,sibling=theorem]{definition}
+\declaretheorem[style=exercise_style,name=Esempio,sibling=theorem]{example}
+\declaretheorem[style=exercise_style,name=Esercizio,sibling=theorem]{exercise}
+\declaretheorem[style=exercise_style,name=Osservazione,sibling=theorem]{remark}
+
+% ================================================================
+%                           DOCUMENTO
+% ================================================================
+
+% inizio documento
+\begin{document}
+
+% definizione titolo
+\title{Formule utili\\\mbox{}\\
+\qrcode{https://github.com/i-friends/mah_tips}
+}
+\author{Luca Ciucci e chi altro si vuole aggiungere}
+\maketitle% genera titolo
+
+\section{Introduction}
+Here is the text of your introduction.
+
+\begin{equation}
+\A\AA
+    \label{simple_equation}
+    \alpha = \sqrt{ \beta }
+\end{equation}
+
+\subsection{Subsection Heading Here}
+Write your subsection text here.
+
+
+\section{Conclusion}
+Write your conclusion here.
+
+\include{chapters/analisi}
+
+\end{document}
